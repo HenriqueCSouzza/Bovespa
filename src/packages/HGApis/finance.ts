@@ -24,4 +24,4 @@ class FinanceService {
     }
   }
 }
-export default FinanceService;
+export default new FinanceService();

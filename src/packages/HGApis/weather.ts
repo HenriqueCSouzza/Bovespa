@@ -1,4 +1,5 @@
 import service from './index';
+import Weather from '../../domains/Weather';
 
 interface Parameters {
   format?: string;
@@ -8,7 +9,7 @@ interface Parameters {
 }
 
 class WeatherService {
-  public async show(params: Parameters): Promise<any> {
+  public async show(params: Parameters): Promise<Weather | null> {
     const defaultParams = {
       ...params,
       key: process.env.HGBRASIL_KEY,
@@ -23,4 +24,4 @@ class WeatherService {
   }
 }
 
-export default WeatherService;
+export default new WeatherService();

@@ -25,4 +25,4 @@ class GeoipService {
   }
 }
 
-export default GeoipService;
+export default new GeoipService();

@@ -1,10 +1,9 @@
 import { Router } from 'express';
 // import { getCustomRepository } from 'typeorm';
 // import { parseISO } from 'date-fns';
-import Service from '../packages/HGApis/weather';
+import weatherService from '../packages/HGApis/weather';
 
 const codesRouter = Router();
-const weatherService = new Service();
 
 codesRouter.get('/weather', async (request, response) => {
   const { query } = request;
