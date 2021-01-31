@@ -7,7 +7,7 @@ interface Parameters {
   city_name?: string;
 }
 
-class weatherService {
+class WeatherService {
   public async show(params: Parameters): Promise<any> {
     const defaultParams = {
       ...params,
@@ -23,4 +23,4 @@ class weatherService {
   }
 }
 
-export default weatherService;
+export default WeatherService;
