@@ -2,19 +2,14 @@ import service from './defaultConfig';
 import Code from '../../domains/Code';
 
 interface Parameters {
-  format?: string;
-  locale?: string;
-  precision?: boolean;
-  fields?: string;
-  // eslint-disable-next-line camelcase
-  user_ip?: string;
+  date?: string;
+  quote?: string;
 }
 
 class Bovespa {
-  public async show(params: Parameters): Promise<Code | null> {
+  public async show({ quote, date }: Parameters): Promise<Code | null> {
     try {
-      const res = await service.get('/bovespa', { params });
-
+      const res = await service.get(`/api/quote/${quote}/${date}`);
       return res.data;
     } catch (err) {
       return err;
