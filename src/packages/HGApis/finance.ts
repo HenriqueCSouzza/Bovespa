@@ -10,7 +10,7 @@ interface Parameters {
 }
 
 class FinanceService {
-  public async show(params: Parameters): Promise<any> {
+  public async show(params: Parameters): Promise<unknown> {
     const defaultParams = {
       ...params,
       key: process.env.HGBRASIL_KEY,
