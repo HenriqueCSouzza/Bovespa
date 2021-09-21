@@ -1,49 +1,63 @@
-// import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import Forecast from './Forecast';
 
-interface Forecast {
-  date: string;
-  weekday: string;
-  max: number;
-  min: number;
-  description: string;
-  condition: string;
-}
-// @Entity('codes')
+@Entity('weathers')
 class Weather {
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  @Column()
   temp: number;
 
+  @Column()
   date: string;
 
+  @Column()
   time: string;
 
+  @Column()
   conditionCode: string;
 
+  @Column()
   description: string;
 
+  @Column()
   currently: string;
 
+  @Column()
   cid: string;
 
+  @Column()
   city: string;
 
+  @Column()
   imgId: string;
 
+  @Column()
   humidity: number;
 
+  @Column()
   windSpeedy: string;
 
+  @Column()
   sunrise: string;
 
+  @Column()
   sunset: string;
 
+  @Column()
   conditionSlug: string;
 
+  @Column()
   cityName: string;
 
+  @Column()
   latitude: number;
 
+  @Column()
   longitude: number;
 
-  forecast: Array<Forecast>;
+  @Column()
+  forecasts: string;
 }
 export default Weather;

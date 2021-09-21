@@ -9,7 +9,6 @@ function errorHandler(
   response: Response,
   next: NextFunction,
 ) {
-  console.log('>>>>>');
   const status = error.status || 500;
   const message = error.message || 'Something went wrong';
   response.status(status).send({

@@ -9,7 +9,7 @@ interface Parameters {
 }
 
 class WeatherService {
-  public async show(params: Parameters): Promise<Weather | null> {
+  public async show(params: Parameters): Promise<Weather | null | unknown> {
     const defaultParams = {
       ...params,
       key: process.env.HGBRASIL_KEY,
@@ -18,7 +18,7 @@ class WeatherService {
       const res = await service.get('/weather', { params: defaultParams });
 
       return res.data;
-    } catch (err) {
+    } catch (err: unknown) {
       return err;
     }
   }

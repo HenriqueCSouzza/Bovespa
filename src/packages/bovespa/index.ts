@@ -7,11 +7,14 @@ interface Parameters {
 }
 
 class Bovespa {
-  public async show({ quote, date }: Parameters): Promise<Code | null> {
+  public async show({
+    quote,
+    date,
+  }: Parameters): Promise<Code | null | unknown> {
     try {
       const res = await service.get(`/api/quote/${quote}/${date}`);
       return res.data;
-    } catch (err) {
+    } catch (err: unknown) {
       return err;
     }
   }
